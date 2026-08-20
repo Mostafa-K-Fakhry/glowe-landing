@@ -1,0 +1,292 @@
+/* --- Theme Variables --- */
+:root {
+  --glow-bg: #FAF8F5;
+  --glow-green: #13351C;
+  --glow-gold: #D4AF37;
+  --glow-brown: #8B5A2B;
+  --glow-light-brown: #C8B090;
+  --glow-accent: #FFEFD5;
+  --glow-border: #EAE1D3;
+}
+
+/* --- Base Styles --- */
+body {
+  background-color: var(--glow-bg);
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.font-serif { 
+  font-family: 'Playfair Display', serif; 
+}
+
+/* --- Custom Utilities --- */
+.text-glow-green { color: var(--glow-green) !important; }
+.bg-glow-green { background-color: var(--glow-green) !important; color: white; }
+.btn-glow-green { 
+  background-color: var(--glow-green); 
+  color: white; 
+  border: none; 
+  transition: all 0.3s ease; 
+}
+.btn-glow-green:hover { 
+  background-color: #0d2513; 
+  color: white; 
+}
+
+.text-glow-gold { color: var(--glow-gold) !important; }
+.bg-glow-gold { background-color: var(--glow-gold) !important; color: white; }
+
+.text-glow-light-brown { color: var(--glow-light-brown) !important; }
+.bg-glow-light-brown { background-color: var(--glow-light-brown) !important; }
+
+.border-glow-border { border-color: var(--glow-border) !important; }
+.bg-glow-bg { background-color: var(--glow-bg) !important; }
+
+.tracking-widest { letter-spacing: 0.1em; }
+.tracking-tight { letter-spacing: -0.02em; }
+.transition-all { transition: all 0.3s ease; }
+
+.max-w-xs { max-width: 20rem; }
+.max-w-md { max-width: 28rem; }
+.max-w-3xl { max-width: 48rem; margin: 0 auto; }
+.max-w-5xl { max-width: 64rem; margin: 0 auto; }
+
+.text-hover-white:hover { color: white !important; }
+
+/* --- Specific Components --- */
+.hero-bg {
+  background: linear-gradient(135deg, #F8EFE4 0%, #FAF8F5 100%);
+}
+
+.nav-scrolled {
+  background-color: rgba(250, 248, 245, 0.95) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border-bottom: 1px solid var(--glow-border);
+}
+
+.hero-img-container {
+  min-height: 500px;
+}
+.hero-glow {
+  width: 400px; 
+  height: 400px; 
+  filter: blur(50px);
+}
+@media (max-width: 768px) {
+  .hero-glow {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+.icon-circle {
+  width: 50px; 
+  height: 50px;
+}
+
+.avatar-group img {
+  width: 40px; 
+  height: 40px; 
+  margin-left: -12px;
+}
+.avatar-group img:first-child {
+  margin-left: 0;
+}
+
+/* Add dividing lines between benefit items on desktop */
+@media (min-width: 992px) {
+  .benefit-divider {
+    border-right: 1px solid var(--glow-border);
+  }
+}
+
+/* Reviews horizontal scroll */
+.review-scroll { 
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1.5rem !important; /* Space for scrollbar */
+}
+.review-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.review-scroll::-webkit-scrollbar-track {
+  background: var(--glow-border);
+  border-radius: 10px;
+}
+.review-scroll::-webkit-scrollbar-thumb {
+  background: var(--glow-green);
+  border-radius: 10px;
+}
+
+.review-card {
+  width: 85vw;
+  max-width: 380px;
+  scroll-snap-align: center;
+}
+
+/* How It Works step lines */
+@media (min-width: 768px) {
+  .step-col::after {
+    content: '\f061';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 25px;
+    right: -15px;
+    color: var(--glow-border);
+  }
+  .step-col:last-child::after { 
+    display: none; 
+  }
+}
+
+/* Accordion specific overrides */
+.custom-accordion .accordion-button:not(.collapsed) {
+  color: var(--glow-green);
+  background-color: transparent;
+  box-shadow: none;
+}
+.custom-accordion .accordion-button::after {
+  background-size: 1rem;
+}
+.btn-hover-green:hover {
+  color: var(--glow-green) !important;
+}
+
+.btn-buy-now {
+  background-color: #f8edda; 
+  color: var(--glow-green); 
+  border: 1px solid var(--glow-light-brown);
+  transition: all 0.3s ease;
+}
+.btn-buy-now:hover {
+  background-color: #f4e3c5;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-btn {
+  position: fixed; 
+  bottom: 24px; 
+  right: 24px;
+  background-color: #25D366; 
+  color: white;
+  width: 56px; 
+  height: 56px; 
+  border-radius: 50%;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  font-size: 1.75rem; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000; 
+  transition: transform 0.3s ease, background-color 0.3s;
+  text-decoration: none;
+}
+.whatsapp-btn:hover { 
+  transform: scale(1.1); 
+  color: white; 
+  background-color: #1ebe5d;
+}
+
+/* --- Mobile Enhancements --- */
+@media (max-width: 991.98px) {
+  /* Navbar solid background on toggle */
+  .navbar-collapse {
+    background: rgba(250, 248, 245, 0.98);
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-top: 1rem;
+  }
+  .mobile-hero-padding {
+    padding-top: 100px !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .display-3 {
+    font-size: 2.5rem !important; 
+  }
+  /* Center text gracefully */
+  .max-w-md {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  /* Tweak icon sizing in mobile */
+  .icon-circle {
+    width: 40px; 
+    height: 40px;
+    margin-bottom: 0.5rem !important;
+  }
+  /* More breathing room between sections */
+  section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  /* Mobile Purchase Button Adjustments */
+  .mobile-input-group {
+    padding: 0 !important;
+  }
+  .mobile-input-group .btn {
+    padding: 0.25rem 0.5rem !important;
+  }
+  .mobile-input-group .form-control {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+    font-size: 0.9rem !important;
+  }
+  .mobile-buy-btn {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Tablet Purchase Button Adjustments (iPad Pro) */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .mobile-input-group {
+    padding: 0.15rem !important;
+  }
+  .mobile-input-group .btn {
+    padding: 0.25rem 0.5rem !important;
+  }
+  .mobile-input-group .form-control {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+    font-size: 1rem !important;
+  }
+  .mobile-buy-btn {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+}
+
+/* --- Ingredients Hover --- */
+.ingredient-card {
+  overflow: hidden;
+}
+.ingredient-img {
+  transition: transform 0.5s ease-in-out;
+}
+.ingredient-card:hover .ingredient-img {
+  transform: scale(1.08);
+}
+
+/* --- Desktop Enhancements --- */
+@media (min-width: 992px) {
+  .desktop-hero-img {
+    transform: translate(65px, 35px);
+  }
+}
+
+/* --- Tablet / iPad Pro Adjustments --- */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .desktop-hero-img {
+    max-width: 85%;
+    transform: translate(20px, 35px);
+  }
+}
