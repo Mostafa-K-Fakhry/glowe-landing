@@ -244,6 +244,6 @@ Used for the project's typography and visual identity.
 glowe-landing-page/
 │
 ├── index.html
-├── styles.css
-├── script.js
+├── css/style.css
+├── js/script.js
 └── README.md
