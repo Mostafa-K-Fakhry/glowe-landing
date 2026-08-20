@@ -8,7 +8,7 @@ The project combines a premium visual experience with interactive e-commerce fun
 
 ## Live Demo
 
-[View Live Demo](#)
+[live demo](https://glowe-landing.vercel.app/)
 
 ---
 
